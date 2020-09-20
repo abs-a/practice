@@ -241,25 +241,31 @@ def ending1():
         clock.tick(FPS)
 
 
-while True:
-    """
-    游戏循环
-    """
-    # 开始按钮
-    start()
-    # 小方块刷出
-    need_time11 = check1()
-    need_time22 = check2()
-    need_time33 = check3()
-    # 算出平均数
-    avenge(need_time11,need_time22,need_time33)
-    # 终止按钮
-    ending1()
-    # 关闭程序按键按下检测
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            exit()
+def main():
+    while True:
+        """
+        游戏循环
+        """
+        # 开始按钮
+        start()
+        # 小方块刷出
+        need_time11 = check1()
+        need_time22 = check2()
+        need_time33 = check3()
+        # 算出平均数
+        avenge(need_time11,need_time22,need_time33)
+        # 终止按钮
+        ending1()
+        # 关闭程序按键按下检测
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                exit()
 
-    pygame.display.update()
-    clock.tick(FPS)
+        pygame.display.update()
+        clock.tick(FPS)
+
+
+if __name__ == '__main__':
+    main()
+
